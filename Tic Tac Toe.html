@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        h1 {
+            background-color: crimson;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 180px);
+            grid-template-rows: repeat(3, 180px);
+            gap: 5px
+        }
+
+        .cell {
+            width: 180px;
+            height: 180px;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            cursor: pointer;
+            border: 2px solid black;
+            place-self: center;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="center">
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+<script>
+    $(document).ready(function () {
+        let player1 = "X";
+        let result = false;
+
+        $(".cell").on("click", function () {
+            if (!result && $(this).text() === "") {
+                $(this).text(player1);
+                if (Win()) {
+                    alert(player1 + " Wins!");
+                    result = true;
+                } else if (Tie()) {
+                    alert("It's a tie!");
+                    result = true;
+                } else {
+                    player1 = (player1 === "X") ? "O" : "X";
+                }
+            }
+        });
+
+        function Win() {
+            let cells = $(".cell");
+            let combinations = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (let i = 0; i < combinations.length; i++) {
+                let a = combinations[i];
+                if (cells[a[0]].textContent === player1 &&
+                    cells[a[1]].textContent === player1 &&
+                    cells[a[2]].textContent === player1) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function Tie() {
+            var cells = $(".cell");
+            for (var i = 0; i < cells.length; i++) {
+                if (cells[i].textContent === "") {
+                    return false;
+                }
+            }
+            return true;
+        }
+    });
+</script>
+
+
+</html>

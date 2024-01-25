@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <title>Square Star Pattern</title>
+    <body>
+        <h1>Learning Square Star Patterns in Java Script </h1>
+        <p>Squre Star Pattern using for loop in java Script</p>
+
+        <p id="Vagi"></p>
+        <script>
+            let num = prompt("Enter the number : ");
+            let x = "";
+            for(let i=0;i<num;i++){
+                for(let j=0;j<num;j++){
+                    x += "*";
+                }
+                x += "</br>";
+            }
+            document.getElementById("Vagi").innerHTML = x;
+        </script>
+    </body>
+</html>

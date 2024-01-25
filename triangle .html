@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Traingle Pattern</h1>
+    <p>Traingle patterns using for loop in Java Script</p>
+
+    <p id="vagi"></p>
+    <script>
+        let n = 5;
+        let x = "";
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= n - i; j++) {
+                x += "&nbsp;";
+            }
+            for (let k = 0; k < 2 * i - 1; k++) {
+                x += "*";
+            }
+            x += "</br>";
+
+        }
+        document.getElementById("vagi").innerHTML = x;
+    </script>
+</body>
+
+</html>

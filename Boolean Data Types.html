@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <title>Boolean data Type</title>
+    <body>
+        <h1>Leaning Boolean data types in Java script</h1>
+        <p>In Boolean Data Type the value is returned in TRUE or FALSE</p>
+
+        <p id="Vagi"></p>
+        <div class="example">Element1</div>
+        <div class="example">Element2</div>
+        <div class="example">Element3</div>
+        <div class="example">Element4</div>
+
+        <script>
+            let x =5;
+            let y = 7;
+            let a = 7;
+            let b=5;
+
+            document.getElementById("Vagi").innerHTML = "XportSoft Technology";
+            const collection=document.getElementsByClassName("example");
+            collection[0].innerHTML = "Boolean value of " + x + "==" +y + " is" + (x==y);
+            collection[1].innerHTML = "Boolean value of " + x + "==" + b + "is " + (x==b);
+            collection[2].innerHTML = "Boolean value of " + y + "==" + a + "is"  + (y==a);
+            collection[3].innerHTML = "Boolean value of " + y + "==" + b +  "is " + (y==b);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Selector</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    .movies {
+      display: none;
+    }
+
+    #cart {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Movie Selector</h2>
+
+  <select id="genreSelect">
+    <option value="">Select Genre</option>
+    <option value="bollywood">Bollywood</option>
+    <option value="comedy">Comedy</option>
+    <option value="thriller">Thriller</option>
+    <option value="hollywood">Hollywood</option>
+  </select>
+
+  <div id="bollywoodMovies" class="movies">
+    <h3>Bollywood Movies</h3>
+    <div class="movie" data-name="Movie 1" data-price="10">
+      <img src="bollywood_movie1.jpg" alt="Movie 1">
+      <p>Movie 1</p>
+    </div>
+    <!-- Add more movies as needed -->
+  </div>
+
+  <div id="comedyMovies" class="movies">
+    <!-- Comedy Movies Content -->
+  </div>
+
+  <div id="thrillerMovies" class="movies">
+    <!-- Thriller Movies Content -->
+  </div>
+
+  <div id="hollywoodMovies" class="movies">
+    <!-- Hollywood Movies Content -->
+  </div>
+
+  <div id="cart">
+    <h3>Shopping Cart</h3>
+    <ul id="cartItems"></ul>
+    <p>Total: $<span id="totalPrice">0</span></p>
+    <button id="buyBtn">Buy</button>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#genreSelect").change(function () {
+        $(".movies").hide();
+        var selectedGenre = $("#" + $(this).val() + "Movies");
+        selectedGenre.show();
+      });
+
+      $(".movie").click(function () {
+        var movieName = $(this).data("name");
+        var moviePrice = $(this).data("price");
+
+        var cartItem = $("<li>").text(movieName + " - $" + moviePrice);
+        $("#cartItems").append(cartItem);
+
+        var totalPrice = parseInt($("#totalPrice").text()) + moviePrice;
+        $("#totalPrice").text(totalPrice);
+
+        $("#cart").show();
+      });
+
+      $("#buyBtn").click(function () {
+        alert("Thank you for your purchase!");
+        // Add additional logic for handling the purchase
+      });
+    });
+  </script>
+
+</body>
+</html>

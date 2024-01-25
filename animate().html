@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations in jQuery</title>
+    <style>
+        h{
+            color: violet;
+        }
+        .a {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+        }
+        .button{
+            text-align: center;
+            border: 1px solid darkblue;
+            border-radius: 12px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Animation in jQuery is used to apply animation to the HTML element</h1>
+    <div class="button">Click to see Magic</div> <br><br>
+    <div class="a"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".button").click(function(){
+            $(".a").animate({left : '725px'});
+        });
+    });
+</script>
+</html>

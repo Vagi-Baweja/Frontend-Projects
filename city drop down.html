@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Information</title>
+    <style>
+        h1 {
+            background-color: crimson;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .a {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 100px;
+
+        }
+
+        .tab {
+            flex-grow: 1;
+            padding: 10px;
+            background-color: White;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            font-size: x-large;
+            border: 2px solid lightcoral;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tab:hover {
+            background-color: lightcoral;
+        }
+       
+
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid black;
+            background-color: #f9f9f9;
+        }
+
+        .dropdown {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: crimson;
+            color: #fff;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            font-size: x-large;
+        }
+        @media (max-width: 600px) {
+            .tabs{
+                display: none;
+            }
+
+            .dropdown {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>City Information</h1>
+    <div class="a">
+        <div class="tabs">
+            <div class="tab city-tab" data-city="delhi">Delhi</div>
+            <div class="tab city-tab" data-city="gurugram">Gurugram</div>
+            <div class="tab city-tab" data-city="noida">Noida</div>
+            <div class="tab city-tab" data-city="pune">Pune</div>
+            <div class="tab city-tab" data-city="mohali">Mohali</div>
+            <div class="tab city-tab" data-city="mumbai">Mumbai</div>
+            <div class="tab city-tab" data-city="hyderabad">Hyderabad</div>
+        </div>
+
+        <select class="dropdown">
+            <option value="delhi">Delhi</option>
+            <option value="gurugram">Gurugram</option>
+            <option value="noida">Noida</option>
+            <option value="pune">Pune</option>
+            <option value="mohali">Mohali</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="hyderabad">Hyderabad</option>
+        </select>
+
+        <div class="content delhi">
+            <p>Delhi, India's capital territory, is a massive metropolitan area in the country's north. In Old Delhi, a
+                neighborhood dating to the 1600s, stands the imposing Mughal-era Red Fort, a symbol of India, and the
+                sprawling Jama Masjid mosque, whose courtyard accommodates 25,000 people. Nearby is Chandni Chowk, a
+                vibrant bazaar filled with food carts, sweets shops and spice stalls</p>
+        </div>
+        <div class="content gurugram">
+            <p>Gurgaon is a city just southwest of New Delhi in northern India. It's known as a financial and technology
+                hub. The Kingdom of Dreams is a large complex for theatrical shows. Sheetala Mata Mandir is an
+                orange-and-white-striped Hindu temple. The Vintage Camera Museum showcases cameras and prints spanning a
+                century. West of the city, Sultanpur National Park is home to hundreds of bird</p>
+        </div>
+        <div class="content noida">
+            <p>Noida is a planned city in India's northern state of Uttar Pradesh. The riverside Okhla Bird Sanctuary is
+                home to migratory and native birds, plus jackals and butterflies. Plants at the Botanic Garden of Indian
+                Republic include water lilies and cacti. The ISKCON Noida temple has a diorama depicting the life of
+                Lord Krishna. Southwest of Noida, Surajkund lake is a 10th-century reservoir with the ruins of a sun
+                temple.</p>
+        </div>
+        <div class="content pune">
+            <p>Pune is a sprawling city in the western Indian state of Maharashtra. It was once the base of the Peshwas
+                (prime ministers) of the Maratha Empire, which lasted from 1674 to 1818. It's known for the grand Aga
+                Khan Palace, built in 1892 and now a memorial to Mahatma Gandhi, whose ashes are preserved in the
+                garden. The 8th-century Pataleshwar Cave Temple is dedicated to the Hindu god Shiva</p>
+        </div>
+        <div class="content mohali">
+            <p>Mohali, officially known as Sahibzada Ajit Singh Nagar, is a planned city in the Mohali district in
+                Punjab, India, which is an administrative and a commercial hub lying south-west of Chandigarh. It is the
+                headquarters of the Mohali district and one of the six Municipal Corporations of the State.</p>
+        </div>
+        <div class="content mumbai">
+            <p>Mumbai is a densely populated city on India's west coast. A financial center,
+                it's India's largest city. On the Mumbai Harbour waterfront stands the iconic Gateway of India stone
+                arch, built by the British Raj in 1924. Offshore, nearby Elephanta Island holds ancient cave temples
+                dedicated to the Hindu god Shiva. The city's also famous as the heart of the Bollywood film industry</p>
+        </div>
+        <div class="content hyderabad">
+            <p>Hyderabad is the capital of southern India's Telangana state. A major center for the technology industry,
+                it's home to many upscale restaurants and shops. Its historic sites include Golconda Fort, a former
+                diamond-trading center that was once the Qutb Shahi dynastic capital. The Charminar, a 16th-century
+                mosque whose 4 arches support towering minarets, is an old city landmark near the long-standing Laad
+                Bazaar.</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('.content.delhi').show();
+
+        $('.city-tab').click(function () {
+            var city = $(this).data('city');
+            $('.content').hide();
+            $('.' + city).show();
+        });
+
+        $('.dropdown').change(function () {
+            var selectedCity = $(this).val();
+            $('.content').hide();
+            $('.' + selectedCity).show();
+        });
+    });
+</script>
+
+
+
+</html>

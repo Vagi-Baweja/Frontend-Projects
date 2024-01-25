@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <title>BitWise Operator</title>
+    <body>
+        <h1>Learning Java Script</h1>
+        <p> Day 2 of doing Java Script</p>
+
+        <p id="Vagi"></p>
+        <div class="example">Element1</div>
+        <div class="example">Element2</div>
+        <div class="example">Element3</div>
+        <div class="example">Element4</div>
+        <div class="example">Element5</div>
+        <div class="example">Element6</div>
+        <div class="example">Element7</div>
+        <div class="example">Element8</div>
+
+        <script>
+            let x = 5 & 1; //Bitwise AND operator
+            let y = 5 | 1; //Bitwise OR operator
+            let z = 5 ^ 1; //Bitwise XOR operator
+            let a =~ 5; //Bitwise NOT operator
+            let b = 5<<1; //Bitwise LEFT SHIFT operator
+            let c = 5>>1; //Bitwise RIGHT SHIFT operator
+            document.getElementById("Vagi").innerHTML = "BITWISE OPERATOR";
+            const collection = document.getElementsByClassName("example");
+            collection[0].innerHTML = "Result of Bitwise AND operator is " + x;
+            collection[1].innerHTML = "Result of Bitwise OR operator is " + y;
+            collection[2].innerHTML = "Result of Bitwise XOR operator is " + z;
+            collection[3].innerHTML = "Result of Bitwise NOT operator is " + a;
+            collection[4].innerHTML = "Result of Bitwise LEFT SHIFT operator is " + b;
+            collection[5].innerHTML = "Result of Bitwise RIGHT SHIFT operator is " + c;
+
+        </script>
+    </body>
+</html>

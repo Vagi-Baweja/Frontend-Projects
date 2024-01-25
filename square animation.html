@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .vagi {
+            width: 150px;
+            height: 150px;
+            background-color: crimson;
+            position: absolute;
+            margin-top: 30px;
+            align-items: center;
+            border : 2px solid black;
+        }
+        .b1 {
+            padding: 15px 32px;
+            text-align: center;
+            background-color: chartreuse;
+            display: inline-block;
+            border-radius: 8px;
+            align-items: center;
+        }
+        .b2 {
+            padding: 15px 32px;
+            text-align: center;
+            background-color: chartreuse;
+            display: inline-block;
+            border-radius: 8px;
+            align-items: center;
+        }
+        body {
+            border: 2px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>We are using Animation for changing the size of the square</h1> <br> <br>
+    <button class="b1">Start Animation</button> <br> <br>
+    <button class="b2">Stop Animation</button>
+    <div class="vagi"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $(".b1").click(function(){
+            let x = $(".vagi");
+            x.animate({height: '300px', opacity: 0.6}, "slow");
+            x.animate({width: '300px', opacity: 0.8}, "slow");
+            x.animate({height: '100px', opacity: 0.6}, "slow");
+            x.animate({width: '100px', opacity: 0.8}, "slow");
+           
+        
+
+        });
+        $(".b2").click(function(){
+            $(".vagi").stop();
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Learning Java Script</h1>
+        <p> Day 2 of doing Java Script</p>
+
+        <p id="Vagi"></p>
+        <div class="example">Element1</div>
+        <div class="example">Element2</div>
+        <div class="example">Element3</div>
+        <div class="example">Element4</div>
+        <div class="example">Element5</div>
+        <div class="example">Element6</div>
+        <div class="example">Element7</div>
+        <div class="example">Element8</div>
+
+        <script>
+            let x = 10;
+            let y = 20;
+            let result = x<y; //less than operator
+
+            let a = 30;
+            let b = 40;
+            let result1 = a>b; // greator than operator
+
+            let e = 10;
+            let f = 10;
+            let result2 = e==f; // double equal to
+            let result3 = e===f; // triple equal to
+            let result4 = e=f; // equal to
+
+            let g = 25;
+            let h = 23;
+            let result5 = g!=h; //not equal to
+
+            document.getElementById("Vagi").innerHTML= "XportSoft Technology";
+            const collection = document.getElementsByClassName("example");
+            collection[0].innerHTML = "Result of less than operator is " + result;
+            collection[1].innerHTML = "Result of greator than operator is " + result1;
+            collection[2].innerHTML = "Result of double equal operator is " + result2;
+            collection[3].innerHTML = "Result of triple equal operator is " + result3;
+            collection[4].innerHTML = "Result of equal to operator is " + result4;
+            collection[5].innerHTML = "Result of not equal to operator is " + result5;
+
+
+        </script>
+
+    </body>
+</html>

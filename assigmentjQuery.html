@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>jQuery Assignment</title>
+    <style>
+        body {
+            border: 5px solid black;
+            background-color: antiquewhite;
+            
+        }
+        select {
+            height: 50px;
+            width: 625px;
+            margin-left: 30%;
+            margin-top: 10%;
+            font-weight: bolder;
+            font-size: xx-large;
+            font-style: italic;
+            margin-top: -30px;
+            
+        }
+        #box {
+            height: 100px;
+            width: 900px;
+            margin-left: 30%;
+            margin-top: 10%;
+            border: 3px solid black;
+            margin: auto;
+            text-align: center;
+            text-align-last: center;
+            font-weight: bolder;
+            font-size: xx-large;
+            font-style: italic;
+            margin-top: -50px;
+
+        }
+
+        h1 {
+            color: tomato;
+            text-align: center;
+            font-size: xx-large;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        #a {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+
+        }
+        
+
+        #b {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            text-align: center;
+
+        }
+
+        #c {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            text-align: center;
+
+
+        }
+
+        #d {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            text-align: center;
+
+        }
+
+        #e {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            text-align: center;
+
+        }
+
+        #f {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            text-align: center;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width:100%;
+            background-color: crimson;
+            color: white;
+            text-align: center;
+
+        
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            width: 150px;
+            height: 150px;
+            
+        }
+        .x {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Fill the color in the box by selecting the color from the Drop Down Box</h1>
+    <img src="./color-picker.png" class="center"> <br><br><br>
+    <div class="color-selector">
+        <label for="color-dropdown"> </label>
+        <select id="vagi">
+            <option  class="x"  value="">Select the Color</option>
+            <option id="a" value="red ">Red</option>
+            <option id="b" value="green">Green</option>
+            <option id="c" value="Blue">Blue</option>
+            <option id="d" value="violet">Violet</option>
+            <option id="e" value="yellow">Yellow</option>
+            <option id="f" value="brown">Brown</option>
+        </select>
+    </div> <br> <br> <br> <br> <br>
+
+
+    <div id="box">When you choose the color from the drop down it will visible in Me!!!!</div> <br><br><br>
+
+    
+    
+       <div class="footer">
+        <p>© Vagish Baweja. All rights reserved.</p>
+       </div>
+   
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $("#vagi").change(function () {
+            let x = document.getElementById("vagi").value;
+            $("#box").css('background-color', x);
+            $("#box").css('color', 'white');
+        });
+    });
+
+</script>
+
+</html>

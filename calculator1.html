@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        h1 {
+            background-color: crimson;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 45px;
+        }
+
+        input#result {
+            width: 350px;
+            height: 50px;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            padding: 3px;
+            border: 3px solid black;
+            border-radius: 10px;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        button {
+            width: 90px;
+            padding: 2px;
+            margin: 2px 0px;
+            left: 13px;
+            top: 20px;
+            height: 60px;
+            cursor: pointer;
+            font-size: x-large;
+            border-radius: 10px;
+            position: relative;
+            background-color: lightcoral;
+            font-weight: bolder;
+        }
+        .main {
+            width: 400px;
+            height: 350px;
+            position: absolute;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+
+        input[type="button"] {
+            width: 90px;
+            padding: 2px;
+            margin: 2px 0px;
+            left: 13px;
+            top: 20px;
+            height: 60px;
+            cursor: pointer;
+            font-size: x-large;
+            border-radius: 10px;
+            position: relative;
+            background-color: lightcoral;
+            font-weight: bolder;
+        }
+
+        input[type='button']:hover {
+            background-color: white;
+            color: black;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <div class="center">
+        <div class="main">
+            <input type="text" id="result"> <br>
+            <div class="btn">
+                <input type="button" value="7">
+                <input type="button" value="8">
+                <input type="button" value="9">
+                <button type="button" onclick="calculate('*')">*</button>
+                <br>
+                <input type="button" value="4">
+                <input type="button" value="5">
+                <input type="button" value="6">
+                <button type="button" onclick="calculate('/')">/</button>
+                <br>
+                <input type="button" value="3">
+                <input type="button" value="2">
+                <input type="button" value="1">
+                <button type="button" onclick="calculate('+')">+</button>
+                <br>
+                <input type="button" value="000">
+                <input type="button" value="00">
+                <input type="button" value="0">
+                <button type="button" onclick="calculate('-')">-</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function calculate(operator) {
+        let num1 = prompt("enter first number"); //divValues.slice(0, 2);
+        let num2 = prompt("enter second number");//divValues.slice(-2);
+        let result = 0;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+        }
+
+        document.getElementById('result').value = result;
+    }
+</script>
+
+</html>

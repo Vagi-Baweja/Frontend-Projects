@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<hmtl>
+    <title>Voting In India</title>
+    <body>
+        <h1>Voting with If Else</h1>
+        <p>If the age of a candidate is above 18 then that candidate is elegible for voting</p>
+
+        <p id="vagi"></p>
+        <p id="baweja"></p>
+
+        <script>
+            let age = prompt("Enter the age : ");
+            if(age >= 18) {
+                document.getElementById("vagi").innerHTML = " The person having age " +  age  +  " is eligble for voting";
+            }
+            else {
+                document.getElementById("baweja").innerHTML = " The person having age " +  age  + " is  not eligble for voting";
+            }
+        </script>
+    </body>
+</hmtl>

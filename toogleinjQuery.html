@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        body {
+            text-align: center;
+            width: 300px;
+            padding: 50px;
+            border : 15px solid green;
+            margin : center;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Learning jQuery using Toogle</h1>
+    <p>Use Toogle function for hiding and Showing the text Again</p>
+
+    <button class="button">Hide & Show</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $(".button").click(function(){
+            $("p").toggle(1000);
+        });
+    });
+</script>
+</html>

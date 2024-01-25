@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideUp() jQuery</title>
+    <style>
+        h1 {
+            color: gold;
+        }
+
+        .a,
+        .b {
+            padding: 20px;
+            text-align: center;
+            border: 2px solid black;
+            background-color: rgb(233, 142, 204);
+        }
+
+        .b {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>slideToogle() in jQuery</h1>
+    <div class="a">Click to open and close the menue</div>
+    <div class="b">Aditya L1 shall be the first space based Indian mission to study the Sun. The spacecraft shall be
+        placed in a halo orbit around the Lagrange point 1 (L1) of the Sun-Earth system, which is about 1.5 million km
+        from the Earth. A satellite placed in the halo orbit around the L1 point has the major advantage of continuously
+        viewing the Sun without any occultation/eclipses. This will provide a greater advantage of observing the solar
+        activities and its effect on space weather in real time. The spacecraft carries seven payloads to observe the
+        photosphere, chromosphere and the outermost layers of the Sun (the corona) using electromagnetic and particle
+        and magnetic field detectors. Using the special vantage point L1, four payloads directly view the Sun and the
+        remaining three payloads carry out in-situ studies of particles and fields at the Lagrange point L1, thus
+        providing important scientific studies of the propagatory effect of solar dynamics in the interplanetary medium
+
+        The suits of Aditya L1 payloads are expected to provide most crucial informations to understand the problem of
+        coronal heating, coronal mass ejection, pre-flare and flare activities and their characteristics, dynamics of
+        space weather, propagation of particle and fields etc.</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</body>
+<script>
+    $(document).ready(function () {
+        $(".a").click(function () {
+            $(".b").slideToggle(2000);
+        });
+    });
+</script>
+
+</html>

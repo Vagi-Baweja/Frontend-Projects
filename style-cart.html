@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icons8-shopping-cart-30.png">
+    <title>Shopping Cart</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .product-container {
+            border: 3px solid black;
+            width: 1470px;
+            border-radius: 10px;
+            height: 750px;
+            float: left;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 5px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .product {
+            border: 2px solid black;
+            width: 300px;
+            height: 325px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            margin-left: 20px;
+            float: right;
+            margin-inline: 15px;
+            margin-right: 40px;
+        }
+
+
+
+        .add-to-cart {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            z-index: 999;
+        }
+
+        .payment-form {
+            display: none;
+            position: fixed;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 5px solid black;
+            z-index: 999;
+            width: 300px;
+            height: 550px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .a {
+            margin-bottom: 20px;
+            font-weight: bolder;
+        }
+
+        html {
+            margin-left: 20px;
+        }
+
+        .img {
+            width: 200px;
+            height: 200px;
+            margin-left: 45px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            text-align: center;
+            font-size: large;
+        }
+
+        .buy-now-btn {
+
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            border-radius: 3px;
+            padding: 10px 24px;
+            border: 0;
+            color: #fff;
+            background: #000a47;
+            line-height: 1.00;
+            font-size: 15px;
+        }
+
+        .buy-now-btn:hover {
+            transition: all .1s ease;
+            box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+        }
+
+        .add-to-cart-btn {
+
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            border-radius: 3px;
+            padding: 10px 24px;
+            border: 0;
+            color: #fff;
+            background: #000a47;
+            line-height: 1.00;
+            font-size: 15px;
+        }
+
+        .add-to-cart-btn:hover {
+            transition: all .1s ease;
+            box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+        }
+
+        #close-btn {
+
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            border-radius: 3px;
+            padding: 10px 24px;
+            border: 0;
+            color: #fff;
+            background: #000a47;
+            line-height: 1.00;
+            font-size: 15px;
+            margin-left: 105px;
+        }
+
+        #close-btn:hover {
+            transition: all .1s ease;
+            box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+        }
+
+        #submit-payment-btn {
+
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+            border-radius: 3px;
+            padding: 10px 24px;
+            border: 0;
+            color: #fff;
+            background: #000a47;
+            line-height: 1.00;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        #submit-payment-btn:hover {
+            transition: all .1s ease;
+            box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+        }
+
+        h1 {
+            background-color: cornflowerblue;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            font-size: xx-large;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: -10px;
+        }
+
+        h2 {
+            background-color: white;
+            color: crimson;
+            text-align: center;
+            padding: 10px;
+            font-size: xx-large;
+            font-weight: bold;
+            font-style: italic;
+            animation: mymove 5s infinite;
+
+        }
+
+        @keyframes mymove {
+            50% {
+                text-shadow: 10px 20px 30px blue;
+            }
+        }
+
+        label {
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <img src='./Style-Shop.png' style='float:left' width="100px" height="60px">
+    <h1>Style-Shop</h1>
+
+    <div class="product-container">
+        <div class="product" data-product-id="1">
+            <img src="./U.S. Polo.webp" class="img" alt="U.S. POLO ASSN">
+            <div>
+                <div class="content">
+                    <p>U.S. POLO ASSN</p>
+                    <p>₹2099</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product" data-product-id="2">
+            <img src="./Yufta Women Ethhnic Kurta.webp" class="img" alt="Yufta Women Ethhnic Kurta">
+            <div>
+                <div class="content">
+                    <p> Women Ethhnic Kurta</p>
+                    <p>₹1399</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-product-id="3">
+            <img src="./pastel-kurta-pajama.jpg" alt="Men Ethnic Wear" class="img">
+            <div>
+                <div class="content">
+
+                    <p>Men Ethnic Wear</p>
+                    <p>₹2199</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-product-id="4">
+            <img src="./watch.png" alt="HAIQIN  Mechanical Watch" class="img" style="margin-right: 50px;">
+            <div>
+                <div class="content">
+
+                    <p>HAIQIN Mechanical Watch</p>
+                    <p>₹3399</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-product-id="5">
+            <img src="./titan.jpg" alt="Titan  Delight Rose Gold" class="img">
+            <div>
+                <div class="content">
+                    <p>Titan Delight Rose Gold</p>
+                    <p>₹4099</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-product-id="6">
+            <img src="./iPhone-15-series.webp" alt="iPhone 15-Series" class="img">
+            <div>
+                <div class="content">
+                    <p>iPhone 15-Series</p>
+                    <p>₹156,900</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-product-id="1">
+            <img src="./lenovo.jpg" class="img" alt="Lenovo IdeaPad Gaming 3 Laptop">
+            <div>
+                <div class="content">
+                    <p>Lenovo IdeaPad Gaming 3 Laptop</p>
+                    <p>₹47,990</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-product-id="1">
+            <img src="./bedsheet.jpg" class="img" alt="JAXMOM Printed King Size Bedsheet">
+            <div>
+                <div class="content">
+                    <p>JAXMOM Printed King Size Bedsheet</p>
+                    <p>₹6999</p>
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="add-to-cart">
+        <h2>Shopping Cart</h2>
+        <img src="" alt="Selected Product" style="width: 300px; height: 300px;">
+        <p id="selected-product-name"></p>
+        <p id="selected-product-price"></p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" value="1">
+        <p>Total Items: <span id="total-items">0</span></p>
+        <p>Total Price: ₹<span id="total-price">0</span></p>
+    </div>
+    <div class="payment-form">
+        <h2>Payment Details</h2>
+        <img src="./payment.jpg" style="width: 300px; height: 200px;">
+        <div class="a">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="Enter your card number">
+        </div>
+        <div class="a">
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YYYY">
+        </div>
+        <div class="a">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="CVV">
+            <button id="submit-payment-btn">Submit Payment</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let cartItems = 0;
+            let totalPrice = 0;
+
+            $(".add-to-cart-btn").click(function () {
+                let product = $(this).closest(".product");
+                let productName = product.find("p:nth-child(2)").text();
+                let productPrice = parseFloat(product.find("p:nth-child(3)").text().substring(1));
+                let productImage = product.find("img").attr("src");
+
+                $("#selected-product-name").text(productName);
+                $("#selected-product-price").text("₹" + productPrice.toFixed(2));
+                $(".add-to-cart img").attr("src", productImage);
+
+                $(".add-to-cart").fadeIn();
+            });
+
+            $(".buy-now-btn").click(function () {
+                let product = $(this).closest(".product");
+                let productName = product.find("p:nth-child(2)").text();
+                let productPrice = parseFloat(product.find("p:nth-child(3)").text().substring(1));
+                let productImage = product.find("img").attr("src");
+
+                $("#selected-product-name").text(productName);
+                $("#selected-product-price").text("₹" + productPrice.toFixed(2));
+                $(".add-to-cart img").attr("src", productImage);
+
+                $(".add-to-cart").fadeIn();
+            });
+
+            $(".buy-btn").click(function () {
+                $(".buy-btn").text("Buy Now");
+                $(".buy-btn").removeClass("buy-btn").addClass("buy-now-btn");
+            });
+
+            $(".buy-now-btn").click(function () {
+                $(".payment-form").fadeIn();
+            });
+
+            $(".submit-payment-btn").click(function () {
+
+                alert("Payment Successful! Thank you for your purchase.");
+
+                $(".add-to-cart").fadeOut();
+                $(".payment-form").fadeOut();
+                $(".buy-now-btn").text("Buy Now");
+                $(".buy-now-btn").removeClass("buy-now-btn").addClass("buy-btn");
+                $("#quantity").val(1);
+                $("#total-items").text(0);
+                $("#total-price").text("0.00");
+            });
+
+            $("#quantity").change(function () {
+                let quantity = $(this).val();
+                let productPrice = parseFloat($("#selected-product-price").text().substring(1));
+                let productTotalPrice = productPrice * quantity;
+
+                $("#total-items").text(quantity);
+                $("#total-price").text(productTotalPrice.toFixed(2));
+            });
+        });
+    </script>
+</body>
+
+</html>

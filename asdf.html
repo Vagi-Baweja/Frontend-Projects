@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <style>
+        .box {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            display: inline-block;
+            border: 1px solid #000;
+        }
+
+        .player-1 {
+            background-color: red;
+        }
+
+        .player-2 {
+            background-color: blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<h1>Dice Game</h1>
+
+<div id="player1-board">
+    <!-- Player 1's boxes -->
+    <div class="box"></div>
+    <div class="box"></div>
+    <!-- Repeat for the other 28 boxes -->
+    <!-- ... -->
+</div>
+
+<div id="player2-board">
+    <!-- Player 2's boxes -->
+    <div class="box"></div>
+    <div class="box"></div>
+    <!-- Repeat for the other 28 boxes -->
+    <!-- ... -->
+</div>
+
+<button id="roll-dice">Roll Dice</button>
+
+<script>
+    $(document).ready(function() {
+        var currentPlayer = 1; // Player 1 starts
+        var boxesFilledPlayer1 = 0;
+        var boxesFilledPlayer2 = 0;
+
+        // Function to check for a winner
+        function checkForWinner() {
+            if (boxesFilledPlayer1 >= 15) {
+                alert("Player 1 wins!");
+            } else if (boxesFilledPlayer2 >= 15) {
+                alert("Player 2 wins!");
+            }
+        }
+
+        // Function to handle dice roll
+        function rollDice() {
+            // Simulate a six-sided dice roll
+            var diceValue = Math.floor(Math.random() * 6) + 1;
+
+            // Determine the current player and the corresponding board
+            var currentPlayerClass = (currentPlayer === 1) ? 'player-1' : 'player-2';
+            var currentBoard = (currentPlayer === 1) ? '#player1-board' : '#player2-board';
+
+            // Fill the corresponding box based on the dice value
+            $(currentBoard + ' .box:not(.filled)').eq(diceValue - 1).addClass(currentPlayerClass).addClass('filled');
+
+            // Update the player's filled boxes count
+            if (currentPlayer === 1) {
+                boxesFilledPlayer1++;
+            } else {
+                boxesFilledPlayer2++;
+            }
+
+            // Check for a winner
+            checkForWinner();
+
+            // Switch to the other player
+            currentPlayer = (currentPlayer === 1) ? 2 : 1;
+        }
+
+        // Bind click event to the "Roll Dice" button
+        $('#roll-dice').on('click', function() {
+            rollDice();
+        });
+    });
+</script>
+
+</body>
+</html>

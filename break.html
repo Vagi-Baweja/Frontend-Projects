@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      height: 2000px; /* Adding some height to the body for scrolling */
+    }
+
+    #scrollImage {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; /* Adjust the image width as needed */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<img id="scrollImage" src="./dreamgirl.jpg" alt="Scrolling Image">
+
+<script>
+  const scrollImage = document.getElementById('scrollImage');
+
+  window.addEventListener('scroll', function() {
+    // Adjust the image position based on the scroll position
+    const scrollPosition = window.scrollY;
+    scrollImage.style.transform = `translate(-50%, calc(-50% + ${scrollPosition}px))`;
+  });
+</script>
+
+</body>
+</html>

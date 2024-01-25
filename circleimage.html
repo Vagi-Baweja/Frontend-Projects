@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotating-image {
+  width: 100px; /* adjust the size as needed */
+  height: 100px;
+  position: relative;
+  animation: rotate 5s linear infinite;
+}
+
+.rotating-image:before,
+.rotating-image:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #000; /* Border color */
+  pointer-events: none;
+}
+
+.rotating-image:before {
+  transform: rotate(45deg);
+}
+
+.rotating-image:after {
+  transform: rotate(-45deg);
+}
+
+.circle {
+  position: absolute;
+  border: 2px dashed #000;
+  border-radius: 50%;
+  width: 120px; /* adjust the size as needed */
+  height: 120px;
+  animation: circleAnimation 5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circleAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="circle"></div>
+    <img src="./imgpsh_fullsize_anim.png" alt="Rotating Image" class="rotating-image">
+  </div>
+</body>
+</html>

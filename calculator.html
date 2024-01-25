@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1 {
+            background-color: crimson;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 45px;
+        }
+
+        input#display {
+            width: 350px;
+            height: 50px;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            padding: 3px;
+            border: 3px solid black;
+            border-radius: 10px;
+            font-size: x-large;
+            font-weight: bolder;
+            align-items: right;
+        }
+
+        .main {
+            width: 400px;
+            height: 425px;
+            position: absolute;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+
+        input[type="button"] {
+            width: 90px;
+            padding: 2px;
+            margin: 2px 0px;
+            left: 13px;
+            top: 20px;
+            height: 60px;
+            cursor: pointer;
+            font-size: x-large;
+            border-radius: 10px;
+            position: relative;
+            background-color: lightcoral;
+            font-weight: bolder;
+        }
+
+        input[type='button']:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <div class="center">
+        <div class="main">
+            <input type="text" id="display" >
+            <div class="btn">
+                <input type="button" value="C" onclick="display.value = ''">
+                <input type="button" value="%" onclick="display.value += '%'">
+                <input type="button" value="←" onclick="display.value = display.value.toString().slice(0,-1)">
+                <input type="button" value="/" onclick="display.value += '/'">
+                <br>
+                <input type="button" value="7" onclick="display.value += '7'">
+                <input type="button" value="8" onclick="display.value += '8'">
+                <input type="button" value="9" onclick="display.value += '9'">
+                <input type="button" value="*" onclick="display.value += '*'">
+                <br>
+                <input type="button" value="4" onclick="display.value += '4'">
+                <input type="button" value="5" onclick="display.value += '5'">
+                <input type="button" value="6" onclick="display.value += '6'">
+                <input type="button" value="-" onclick="display.value += '-'">
+                <br>
+                <input type="button" value="1" onclick="display.value += '1'">
+                <input type="button" value="2" onclick="display.value += '2'">
+                <input type="button" value="3" onclick="display.value += '3'">
+                <input type="button" value="+" onclick="display.value += '+'">
+                <br>
+                <input type="button" value="00" onclick="display.value += '00'">
+                <input type="button" value="0" onclick="display.value += '0'">
+                <input type="button" value="." onclick="display.value += '.'">
+                <input type="button" value="=" class="result" onclick="display.value = eval(display.value)">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

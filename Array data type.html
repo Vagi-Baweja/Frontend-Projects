@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <title>Array Data Type</title>
+    <body>
+        <h1>Learning Array Data Type in Java Script</h1>
+        <p>Array are written with square bracket and the items inside the array are separated by comos</p>
+
+        <p id="Vagi"></p>
+        <div class="example">element1</div>
+        <div class="example">element2</div>
+        <div class="example">element3</div>
+        <div class="example">element4</div>
+        <script>
+            let places = ["Ambala", "New Delhi", "Surat", "Pune" , "Mumbai" , "Gurugram" , "Phagwara","Jalandar","Amritsar"];
+
+            document.getElementById("Vagi").innerHTML = "Places are Ambala , New Delhi , Surat , Pune , Mumbai , Gurugram , Phagwara , Jalandar , Amritsar";
+            const collection = document.getElementsByClassName("example");
+            collection[0].innerHTML = "In Array the item at index 1 is " + places[0];
+            collection[1].innerHTML = "In Array the item at index 2 is " + places[1];
+            collection[2].innerHTML = "In Array the item at index 3 is " + places[2];
+            collection[3].innerHTML = "In Array the item at index 4 is " + places[3];
+
+        </script>
+    
+    </body>
+</html>

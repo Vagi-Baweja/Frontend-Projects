@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slidedown()</title>
+    <style>
+        h1 {
+            color: violet;
+        }
+        .a , .b  {
+            padding: 10px;
+            text-align: center;
+            background-color: aqua;
+            border: 2px solid black;
+            
+        }
+        .b {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>slideDown() method in jQuery</h1>
+
+    <div class="a">Click on this for Slide Down the Menue</div>
+    <div class="b">India, officially the Republic of India  is a country in South Asia. It is
+        the seventh-largest country by area; the most populous country as of June 2023; and from the time of its
+        independence in 1947, the world's most populous democracy.</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $(".a").click(function(){
+            $(".b").slideDown(5000);
+        });
+    });
+</script>
+
+</html>
